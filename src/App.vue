@@ -5,8 +5,8 @@
         Vuetify Dashboard
       </v-tool-bar-title>
       <v-spacer></v-spacer>
-      <v-btn>Home</v-btn>
-      <v-btn>Login</v-btn>
+      <v-btn text-rounded>Home</v-btn>
+      <v-btn text-rounded>Login</v-btn>
     </v-app-bar>
 
     <!--Login Module-->
@@ -67,7 +67,11 @@
 export default {
   name: 'App',
   data: () => ({
-    showPassword: false
+    showPassword: false,
+    links:[
+      'Home',
+      'Login'
+    ]
   }),
 };
 
