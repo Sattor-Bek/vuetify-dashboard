@@ -8,11 +8,10 @@
             class="elevation-1"
             @click:row="selectRow"
         ></v-data-table>
-        <v-btn dark @click="snackbar = true">Open Snackbar</v-btn>
         <v-snackbar
         v-model="snackbar"
         >
-        {{ text }}
+        You have selected {{ currentItem }}
         <v-btn
             color="pink"
             text
@@ -28,7 +27,8 @@
   export default {
     data () {
       return {
-        snackbar: true,
+        currentItem: "",
+        snackbar: false,
         headers: [
           {
             text: 'Dessert (100g serving)',
@@ -126,9 +126,10 @@
         ],
       }
     },
-    method: {
-        selectRow() {
+    methods: {
+        selectRow(event) {
             this.snackbar = true
+            this.currentItem = event.name
         }
     }
   }
